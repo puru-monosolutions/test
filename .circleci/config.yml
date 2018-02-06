@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     
-    working_directory: ~/brokenLinks
+    working_directory: ~/test
 
     docker:
       - image: circleci/openjdk:8-jdk-browsers
@@ -12,16 +12,16 @@ jobs:
       - checkout
 
       - restore_cache:
-          key:brokenLinks-{{ checksum "pom.xml" }}
+          key:test-{{ checksum "pom.xml" }}
       
       - run: mvn dependency:go-offline
       
       - save_cache:
           paths:
             - ~/.m2
-          key: brokenLinks-{{ checksum "pom.xml" }}
+          key: test-{{ checksum "pom.xml" }}
       
-      - run: mvn package
+      - run: mvn clean install
       
       - store_test_results:
           path: target/surefire-reports
