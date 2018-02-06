@@ -16,7 +16,7 @@ jobs:
       - run: sleep 15
 workflows:
   version: 2
-  one_and_two:
+  one_and_twoo:
     jobs:
       - one
       - two
