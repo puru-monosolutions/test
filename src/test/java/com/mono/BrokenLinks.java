@@ -23,7 +23,7 @@ public class BrokenLinks {
 	    public void beforeClass() {
 	        //driver = new FirefoxDriver();
 	        System.out.println("launching chrome browser----§");
-			System.setProperty("webdriver.chrome.driver", "/Users/pururanjijar/work/driver-downloaded/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
 			driver = new ChromeDriver();
 	        driver.get("http://www.monoacademy.com/");
 	}
